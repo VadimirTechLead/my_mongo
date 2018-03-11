@@ -1,0 +1,31 @@
+{
+  "name": "my_mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slonik6663444/my_mongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slonik6663444/my_mongo/issues"
+  },
+  "homepage": "https://github.com/slonik6663444/my_mongo#readme",
+  "dependencies": {
+    "imap": "^0.8.19",
+    "mongoose": "^5.0.9",
+    "node-static": "^0.7.10",
+    "nodemailer": "^4.6.2",
+    "request": "^2.83.0",
+    "socket.io": "^2.0.4",
+    "websocket": "^1.0.25"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
