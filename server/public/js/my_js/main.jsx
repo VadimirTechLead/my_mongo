@@ -1,4 +1,4 @@
-// var socket = io("http://localhost:3000");
+ //var socket = io("http://localhost:3000");
  var socket = io("http://185.69.154.252");
 var mes_obj = [
   {
