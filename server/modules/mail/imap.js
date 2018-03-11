@@ -6,8 +6,8 @@ var mailListener = new MailListener({
   host: "imap.gmail.com",
   port: 993, // imap port
   tls: true,
-  connTimeout: 10000, // Default by node-imap
-  authTimeout: 5000, // Default by node-imap,
+  connTimeout: 100000, // Default by node-imap
+  authTimeout: 50000, // Default by node-imap,
   debug: console.log, // Or your custom function with only one incoming argument. Default: null
   tlsOptions: { rejectUnauthorized: false },
   mailbox: "INBOX", // mailbox to monitor
