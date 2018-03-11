@@ -1,4 +1,5 @@
-var socket = io("http://185.69.154.252");
+// var socket = io("http://localhost:3000");
+ var socket = io("http://185.69.154.252");
 var mes_obj = [
   {
     to: "pgs47@yandex.ua",
@@ -16,12 +17,14 @@ var Block = React.createClass({
       socket.emit("my other event", { my: "апрапрапр" });
     });
     socket.on("news_mes", function(data) {
+      ReactDOM.render(<Block />, root);
       console.log(data);
     });
     return { checked: true };
   },
   axios: function(url) {},
   mySocket: function() {
+    
     console.log("norm1");
     var obj = {};
     $("#form_1 div input").each(function() {
@@ -29,6 +32,7 @@ var Block = React.createClass({
       obj[this.name] = this.value;
     });
     console.log(obj, "new_email");
+    ReactDOM.render(<Block_4 />, root);
     socket.emit("new_email", { dat: obj });
   },
   test: function(a) {
@@ -56,7 +60,6 @@ var Block = React.createClass({
             required="required"
             className="form"
             placeholder="Email"
-            
           />
 
           <input
@@ -66,7 +69,6 @@ var Block = React.createClass({
             required="required"
             className="form"
             placeholder="Subject"
-            
           />
         </div>
 
@@ -79,7 +81,6 @@ var Block = React.createClass({
             idName="message"
             className="form textarea"
             placeholder="Message"
-            
           />
         </div>
 
@@ -104,15 +105,12 @@ var Block_2 = React.createClass({
       mes_obj = params;
       ReactDOM.render(<Block_3 />, root);
     });
-    socket.on("news_mes", function(params) {
-      console.log("news_mes")
-    });
     socket.on("incoming", function(params) {
-      console.log("incoming")
+      console.log("incoming");
       mes_obj = params;
       ReactDOM.render(<Block_3 />, root);
     });
-    
+
     return { checked: true };
   },
   shipped: function() {
@@ -168,6 +166,23 @@ var Block_3 = React.createClass({
           {/* <span>{this.list.status}</span> */}
         </ul>
       </section>
+    );
+  }
+});
+var Block_4 = React.createClass({
+  getInitialState: function() {
+    return { checked: true };
+  },
+  mySocket: function() {},
+
+  render: function() {
+    return (
+      <div className="loading-bro">
+        <h1>отправка</h1>
+        <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+          <circle id="loading-inner" cx="75" cy="75" r="60" />
+        </svg>
+      </div>
     );
   }
 });
