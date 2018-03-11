@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/slonik6663444/my_mongo#readme",
   "dependencies": {
+    "express": "^4.16.2",
     "imap": "^0.8.19",
+    "mail-listener2": "^0.3.1",
     "mongoose": "^5.0.9",
     "node-static": "^0.7.10",
     "nodemailer": "^4.6.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "request": "^2.83.0",
     "socket.io": "^2.0.4",
     "websocket": "^1.0.25"
