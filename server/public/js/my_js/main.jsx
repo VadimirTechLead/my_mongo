@@ -1,5 +1,5 @@
-// var socket = io("http://localhost:3000");
- var socket = io("http://185.69.154.252");
+ var socket = io("http://localhost:3000");
+// var socket = io("http://185.69.154.252");
 var mes_obj = [
   {
     to: "pgs47@yandex.ua",
@@ -10,6 +10,7 @@ var mes_obj = [
     id: 1
   }
 ];
+
 var Block = React.createClass({
   getInitialState: function() {
     socket.on("news", function(data) {
@@ -105,12 +106,16 @@ var Block_2 = React.createClass({
       mes_obj = params;
       ReactDOM.render(<Block_3 />, root);
     });
+    socket.on("news_mes_pol", function(params) {
+      console.log("news_mes_pol")
+      // mes_obj = params;
+      // ReactDOM.render(<Block_3 />, root);
+    });
     socket.on("incoming", function(params) {
       console.log("incoming");
       mes_obj = params;
       ReactDOM.render(<Block_3 />, root);
     });
-
     return { checked: true };
   },
   shipped: function() {
@@ -135,7 +140,7 @@ var Block_2 = React.createClass({
             отправленые
           </button>
           <button className="btn-2" onClick={this.incoming}>
-            входящее
+            входящее 
           </button>
         </div>
       </div>

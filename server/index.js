@@ -3,7 +3,7 @@ var file = new static.Server("./server/public");
 const gmail = require("../server/modules/mail/gmail.js");
 const my_mongo = require("../server/modules/db/mongo.js");
 const imap = require("../server/modules/mail/imap.js");
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 var app = require("http").createServer(handler);
 var io = require("socket.io")(app);
 var fs = require("fs");
@@ -36,7 +36,7 @@ io.on("connection", function(socket) {
         // socket.emit("news_mes", { ok: false });
       } else {
         console.log("окей_2");
-        socket.emit("news_mes", obj);
+         socket.emit("news_mes_pol", obj);
       }
     });
     // mail processing code goes here
