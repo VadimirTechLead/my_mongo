@@ -1,5 +1,5 @@
- //var socket = io("http://localhost:3000");/* 5555 */
- var socket = io("http://185.69.154.252");
+// var socket = io("http://localhost:3000");/* 5777 */
+var socket = io("http://185.69.154.252");
 var mes_obj = [
   {
     to: "pgs47@yandex.ua",

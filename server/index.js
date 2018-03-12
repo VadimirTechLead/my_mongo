@@ -112,6 +112,7 @@ io.on("connection", function(socket) {
     gmail.gmail(mailOptions, function(err, data) {
       if (err) {
         console.log(err, "erllllllr");
+        socket.emit("news_mes" , { ok: false });
       } else {
         my_mongo.my_mongo_get(mailOptions,{model:"new"}, function(err, data_1) {
           if (err) {
