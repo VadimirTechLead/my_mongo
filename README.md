@@ -1,7 +1,7 @@
 # my_mongo
 git clone https://github.com/slonik6663444/my_mongo.git
 
-cd ./server my_mongo
+cd ./my_mongo
 
 start app `npm run start`
 
