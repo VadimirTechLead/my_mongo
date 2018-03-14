@@ -1,4 +1,3 @@
-// var socket = io("http://localhost:3000");/* 5777 */
 var socket = io("http://185.69.154.252");
 var mes_obj = [
   {
@@ -14,30 +13,21 @@ var mes_obj = [
 var Block = React.createClass({
   getInitialState: function() {
     socket.on("news", function(data) {
-      console.log(data);
       socket.emit("my other event", { my: "апрапрапр" });
     });
     socket.on("news_mes", function(data) {
       ReactDOM.render(<Block />, root);
-      console.log(data);
     });
     return { checked: true };
   },
   axios: function(url) {},
   mySocket: function() {
-    
-    console.log("norm1");
     var obj = {};
     $("#form_1 div input").each(function() {
-      // console.log( this.value + ":" + this.name );
       obj[this.name] = this.value;
     });
-    console.log(obj, "new_email");
     ReactDOM.render(<Block_4 />, root);
     socket.emit("new_email", { dat: obj });
-  },
-  test: function(a) {
-    console.log("test");
   },
   list: {
     status: "",
@@ -46,7 +36,6 @@ var Block = React.createClass({
     load: false,
     twitt: []
   },
-  /* defaultValue="pgs47@yandex.ua" */
   render: function() {
     return (
       <div id="form_1">
@@ -107,23 +96,17 @@ var Block_2 = React.createClass({
       ReactDOM.render(<Block_3 />, root);
     });
     socket.on("news_mes_pol", function(params) {
-      console.log("news_mes_pol")
-      // mes_obj = params;
-      // ReactDOM.render(<Block_3 />, root);
     });
     socket.on("incoming", function(params) {
-      console.log("incoming");
       mes_obj = params;
       ReactDOM.render(<Block_3 />, root);
     });
     return { checked: true };
   },
   shipped: function() {
-    console.log("ok");
     socket.emit("shipped");
   },
-  incoming: function() {
-    console.log("ok");
+  incoming: function() {;
     socket.emit("incoming");
   },
   new_message: function() {
@@ -191,8 +174,7 @@ var Block_4 = React.createClass({
     );
   }
 });
-const root = document.getElementById("root");
-const root_2 = document.getElementById("root_2");
+var root = document.getElementById("root");
+var root_2 = document.getElementById("root_2");
 ReactDOM.render(<Block />, root);
 ReactDOM.render(<Block_2 />, root_2);
-//ReactDOM.render(<Block_3 />, root);
