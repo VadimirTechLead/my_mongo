@@ -1,4 +1,4 @@
-var socket = io("http://185.69.154.252");
+var socket = io("localhost:3000");
 var mes_obj = [
   {
     to: "pgs47@yandex.ua",

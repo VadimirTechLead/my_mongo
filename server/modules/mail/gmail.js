@@ -6,10 +6,8 @@ var smtpTransport = nodemailer.createTransport({
     pass: "slonik6663444"
   }
 });
-
 function gmail(mailOptions, callbecks) {
   console.log(mailOptions, "mailOptions");
-
   smtpTransport.sendMail(mailOptions, function(error, response) {
     if (error) console.log("eror", error);
     callbecks(error);

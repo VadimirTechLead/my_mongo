@@ -3,11 +3,10 @@ var file = new static.Server("./server/public");
 const gmail = require("../server/modules/mail/gmail.js");
 const my_mongo = require("../server/modules/db/mongo.js");
 const imap = require("../server/modules/mail/imap.js");
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 var app = require("http").createServer(handler);
 var io = require("socket.io")(app);
 var fs = require("fs");
-
 app.listen(port);
 
 function handler(req, res) {
@@ -55,7 +54,6 @@ io.on("connection", function(socket) {
   });
   socket.on("incoming", function(data) {
     my_mongo.my_mongo_set({}, { model: "incoming" }, function(err, data) {
-      console.log(data);
       var obj_cl = [];
       for (let a = 0; a < data.length; a++) {
         obj_cl.push({

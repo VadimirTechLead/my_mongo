@@ -2,9 +2,6 @@ var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/mail_1");
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  console.log("norm");
-});
 var Schema = mongoose.Schema;
 var userSchema = new Schema({
   to: String,
@@ -25,7 +22,6 @@ function my_mongo_get(mailOptions, options,callbecks) {
   });
   arvind.save(function(err, data) {
       if (err) {
-        console.log(err) 
         callbecks(err,data);
       } else {
         callbecks(null,data);
